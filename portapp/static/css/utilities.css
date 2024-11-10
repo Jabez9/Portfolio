@@ -1,0 +1,129 @@
+.display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items {
+    align-items: center;
+}
+
+.space {
+    justify-content: space-around;
+}
+
+.btn1 {
+    font-family: 'poppins', sans-serif;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    transition: all 0.5s ease;
+}
+
+.btn-primary1 {
+    color: var(--pure);
+    background: var(--secondary);
+}
+
+.btn-primary1:hover{
+    background: transparent;
+    border: 2px solid var(--secondary);
+}
+
+.hero .right .btns{
+    font-family: 'poppins', sans-serif;
+    padding: 0.4rem 1rem;
+    font-size: .9rem;
+    font-weight: 400;
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    outline: none;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    transition: all .3s ease;
+}
+
+.hero .right .btn-secondary{
+    color: var(--secondary);
+}
+.hero .right .btn-secondary:hover{
+    color: var(--light);
+    background-color: var(--secondary);
+}
+
+.hero .right .download{
+    margin-left:1rem;
+    font-weight: 600;
+}
+
+.hero .right .svg-container{
+    margin-left:2.5rem;
+    font-weight: 600;
+}
+.hero .right .svg-container svg{
+    margin-right:1rem;
+    font-weight: 600;
+}
+
+
+.flex-1{
+    flex:1
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display{
+        flex-direction: column;
+    }
+  }
+  
+
+.justify-center {
+    justify-content: center;
+}
+
+/* let's talk button */
+.talk {
+    font-family: 'poppins', sans-serif;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    transition: all .3s ease;
+}
+
+.talk-primary {
+    color: var(--pure);
+    background: var(--secondary);
+}
+
+.talk-primary:hover{
+    background: transparent;
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+
+.section-heading {
+    color: var(--primary);
+    font-family: 'opensan', sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 0.5;
+    font-size: 2rem;
+}
+.section-heading span {
+    color: var(--secondary);
+}
+
+.section-heading + p{
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
