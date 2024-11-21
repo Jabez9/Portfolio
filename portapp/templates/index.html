@@ -16,9 +16,9 @@
 </head>
 
 <body>
-    <header>
+    <header >
         <div class="container">
-            <nav class="display items space">
+            <nav class="display items space fixed-top">
                 <div class="left display items">
                     <div class="logo">
                         <h1>Huya<span>.</span></h1>
@@ -119,6 +119,28 @@
                     <h2 class="count-number" id="commits-count">10+</h2>
                     <p class="count-label">Project Contributions</p>
                 </div>
+                <!-- <div class="count-item">
+                    <h2 class="count-number" id="commits-count">0</h2>
+
+                <script>
+                    let count = 0;
+                    const counterElement = document.getElementById("commits-count");
+                  
+                    function updateCounter() {
+                      if (count < 10) {
+                        count++;
+                        counterElement.textContent = count;
+                        setTimeout(updateCounter, 30); // Adjust speed by changing the timeout value
+                      } else {
+                        counterElement.textContent = "Technologies Mastered";
+                      }
+                    }
+                  
+                    updateCounter(); // Start the counter
+                  </script>
+                  </div> -->
+
+
                 <div class="count-item">
                     <h2 class="count-number" id="projects-count">2</h2>
                     <p class="count-label">Projects Completed</p>
@@ -293,7 +315,7 @@
                     <select id="service" name="service" required>
                         <option value="" disabled selected>Select a service</option>
                         <option value="web-development">Web Development</option>
-                        <option value="seo">Cloud</option>
+                        <option value="cloud">Cloud</option>
                         <option value="consultation">Consultation</option>
                     </select>
                 </div>
