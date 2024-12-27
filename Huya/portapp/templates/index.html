@@ -1,0 +1,412 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'assets/favicon.jpeg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap"
+        rel="stylesheet">
+    <title>Jabez Huya</title>
+</head>
+
+<body>
+    <header >
+        <div class="container">
+            <nav class="display items space fixed-top">
+                <div class="left display items">
+                    <div class="logo">
+                        <h1>HUYA<span>.</span></h1>
+                    </div>
+                    <div>
+                        <a href="#" class="active">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#skills">Resume</a>
+                        <a href="#services">Services</a>
+                        <a href="#myworks">Work</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="#contact"><button class="btn1 btn-primary1">Hire Me</button></a>
+                </div>
+            </nav>
+            <div class="hero display items justify-between">
+                <div class="right flex-1 flex justify-center">
+                    <h6>Software Engineer</h6>
+                    <!-- <h1>Hello! I am <br> <span class="typewriter">Jabez Huya.</span></h1> -->
+                    <h1>{{ greeting }} I'm <br> <span class="typewriter">Jabez Huya.</span></h1>
+                    <p>A dynamic Software Engineer with a proven track record of delivering high-quality software
+                        solutions that align with organizational objectives. </p>
+                    <div class="display items download_socials">
+                        <a href="{% static 'assets/resume/resume.pdf' %}" download="CURRICULUM VITAE">
+                            <button class="btns btn-secondary">DOWNLOAD CV<svg class="download"
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    stroke="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                    <path
+                                        d="M.5 9.9a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 1 0v4A1.5 1.5 0 0 1 14.5 16h-13A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5z" />
+                                    <path
+                                        d="M5.354 7.854a.5.5 0 0 1 .707 0L8 9.793V1.5a.5.5 0 0 1 1 0v8.293l1.939-1.939a.5.5 0 1 1 .707.707l-2.646 2.647a.5.5 0 0 1-.707 0L5.354 8.561a.5.5 0 0 1 0-.707z" />
+                                </svg></button>
+                        </a>
+                        <div class="svg-container">
+                            <a href="https://github.com/Jabez9" title="Github" rel="noopener" target="_blank"><svg
+                                    width="25" height="25" viewBox="0 0 256 249"
+                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+                                    <g fill="#00a86b">
+                                        <path
+                                            d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
+                                        <path
+                                            d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
+                                    </g>
+                                </svg></a>
+                            <a href="https://www.linkedin.com/in/jabez-huya/" title="linkedin" rel="noopener"
+                                target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    viewBox="7.025 7.025 497.951 497.95">
+                                    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-974.482"
+                                        y1="1306.773" x2="-622.378" y2="1658.877"
+                                        gradientTransform="translate(1054.43 -1226.825)">
+                                        <stop offset="0" stop-color="#2489be" />
+                                        <stop offset="1" stop-color="#0575b3" />
+                                    </linearGradient>
+                                    <path
+                                        d="M256 7.025C118.494 7.025 7.025 118.494 7.025 256S118.494 504.975 256 504.975 504.976 393.506 504.976 256C504.975 118.494 393.504 7.025 256 7.025zm-66.427 369.343h-54.665V199.761h54.665v176.607zM161.98 176.633c-17.853 0-32.326-14.591-32.326-32.587 0-17.998 14.475-32.588 32.326-32.588s32.324 14.59 32.324 32.588c.001 17.997-14.472 32.587-32.324 32.587zm232.45 199.735h-54.4v-92.704c0-25.426-9.658-39.619-29.763-39.619-21.881 0-33.312 14.782-33.312 39.619v92.704h-52.43V199.761h52.43v23.786s15.771-29.173 53.219-29.173c37.449 0 64.257 22.866 64.257 70.169l-.001 111.825z"
+                                        fill="#00a86b" />
+                                </svg></a>
+                            <a href="https://x.com/Jabez_9" title="X" rel="noopener" target="_blank"><svg
+                                    class="svgicon" fill="none" height="25" width="25"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006">
+                                    <path
+                                        d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z"
+                                        fill="#00a86b" />
+                                </svg></a>
+                            <a href="https://instagram.com/huya_jay" title="Instagram" rel="noopener" target="_blank">
+                                    <svg class="svgicon" fill="none" height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <g fill="#00a86b" >
+                                        <path d="M12 2.2c3.1 0 3.5 0 4.7.1 1.2.1 2.3.4 3.1 1.2.8.8 1.1 1.9 1.2 3.1.1 1.2.1 1.6.1 4.7s0 3.5-.1 4.7c-.1 1.2-.4 2.3-1.2 3.1-.8.8-1.9 1.1-3.1 1.2-1.2.1-1.6.1-4.7.1s-3.5 0-4.7-.1c-1.2-.1-2.3-.4-3.1-1.2-.8-.8-1.1-1.9-1.2-3.1-.1-1.2-.1-1.6-.1-4.7s0-3.5.1-4.7c.1-1.2.4-2.3 1.2-3.1.8-.8 1.9-1.1 3.1-1.2C8.5 2.2 8.9 2.2 12 2.2m0-2.2C8.9 0 8.5 0 7.3.1 5.8.1 4.4.5 3.3 1.7c-1.2 1.2-1.6 2.6-1.7 4.1C1.5 8.4 1.5 8.8 1.5 12s0 3.6.1 4.8c.1 1.5.5 2.9 1.7 4.1 1.2 1.2 2.6 1.6 4.1 1.7 1.2.1 1.6.1 4.8.1s3.6 0 4.8-.1c1.5-.1 2.9-.5 4.1-1.7 1.2-1.2 1.6-2.6 1.7-4.1.1-1.2.1-1.6.1-4.8s0-3.6-.1-4.8c-.1-1.5-.5-2.9-1.7-4.1-1.2-1.2-2.6-1.6-4.1-1.7-1.2-.1-1.6-.1-4.8-.1z"  />
+                                        <path d="M12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.3a4.1 4.1 0 110-8.2 4.1 4.1 0 010 8.2z"/>
+                                        <circle cx="18.4" cy="5.6" r="1.4"/>
+                                    </g>
+                                    </svg></a>
+                                <a href="https://tiktok.com/@_collartz" title="TikTok" rel="noopener" target="_blank">
+                                        <svg class="svgicon" fill="none" height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <g fill="#00a86b" >
+                                            <path d="M9.5 2.5c.6 0 1.2 0 1.8.1v7.6c0 1.7-1.2 2.7-2.4 2.7-1 0-2-.9-2-2s.8-2 1.8-2c.3 0 .6 0 .8.1v-2c-.3 0-.5-.1-.8-.1-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c2.5 0 4.5-2 4.5-4.5V5.4c1.1.8 2.5 1.3 4 1.3V4.3c-1.5-.1-2.8-.6-4-1.5-1-1-1.5-2.3-1.5-3.8h-2z"  />
+                                        </g>
+                                        </svg></a>
+                                    
+                                
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="left">
+                    <img src="{% static 'assets/images/jabez0.jpeg' %}" alt="img">
+                </div>
+
+            </div>
+            <div class="count-container">
+                <div class="count-item">
+                    <h2 class="count-number" id="experience-count">2+</h2>
+                    <p class="count-label">Years of Experience</p>
+                </div>
+                <div class="count-item">
+                    <!-- <h2 class="count-number" id="commits-count">10+</h2>
+                    <p class="count-label">Project Contributions</p> -->
+                    <h2 class="count-number" id="commits-count">0</h2>
+<p class="count-label">Project Contributions</p>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const counterElement = document.getElementById("commits-count");
+        const targetNumber = 10; // The number to count up to before showing "+"
+        const duration = 6000; // Total duration of the animation in milliseconds
+        const initialInterval = 100; // Initial interval in milliseconds
+        const slowdownStart = 6; // The number where the slowdown begins
+
+        let currentNumber = 0;
+        let currentInterval = initialInterval; // Start with the initial interval
+
+        function updateCounter() {
+            if (currentNumber < slowdownStart) {
+                currentNumber += Math.ceil(targetNumber / (duration / currentInterval));
+            } else {
+                currentInterval += 100; // Gradually increase the interval to slow down
+                currentNumber += 1; // Increase by 1 as the counter slows
+            }
+
+            if (currentNumber >= targetNumber) {
+                counterElement.textContent = `${targetNumber}+`; // Display the target number with "+"
+            } else {
+                counterElement.textContent = currentNumber; // Update the number
+                setTimeout(updateCounter, currentInterval); // Call the function again with the updated interval
+            }
+        }
+
+        // Start the counter animation
+        updateCounter();
+    });
+</script>
+
+                </div>
+
+
+
+                <div class="count-item">
+                    <h2 class="count-number" id="projects-count">2</h2>
+                    <p class="count-label">Projects Completed</p>
+                </div>
+                <div class="count-item">
+                    <h2 class="count-number" id="techstack-count">5+</h2>
+                    <p class="count-label">Technologies Mastered</p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- Floating Button -->
+        <div class="floating-button">
+            <a href="#" class="button-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
+                    <path d="M19 15l-7-7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    
+    <section id="about" class="about">
+        <div class="container display items">
+            <div class="flex-1 image-container">
+            <img class="about-img" src="{% static 'assets/images/jabez1.jpeg' %}" alt="">
+                <div class="overlay"></div>
+            </div>
+            <div class="flex-1">
+                <h1>About <span>Me</span></h1>
+                <h3>Software Engineer</h3>
+                <p>I am a dedicated software engineer passionate about transforming ideas into impactful solutions through technology. My journey in software development began with a fascination for how code can solve real-world challenges, and today, I am driven by the thrill of tackling complex problems and continuous learning in this dynamic field. I aim to create innovative, efficient software that truly makes a difference—whether it’s pioneering new projects or optimizing existing systems, I’m committed to delivering high-quality solutions that drive meaningful progress and exceed expectations.
+                </p>
+                <div class="talk-button">
+                    <a href="{% static 'assets/resume/resume.pdf' %}" download="CURRICULUM VITAE"><Button
+                            class="talk talk-primary">Download CV</Button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="skills-container container">
+            <h2><span>My Tech</span> Stack</h2>
+            <p>Explore The various technologies I'm profficient in</p>
+            <div class="skills-grid">
+
+                <div class="skill">
+                    <img src="{% static 'assets/svg/django-svgrepo-com.svg' %}" alt="Django">
+                    <h3>Django</h3>
+                </div>
+                <div class="skill">
+                    <img src="{% static 'assets/svg/python-5.svg' %}" alt="Python">
+                    <h3>Python</h3>
+                </div>
+                <!-- <div class="skill">
+                    <img src="{% static 'assets/svg/nodejs-2.svg' %}" alt="Node.js">
+                    <h3>Node.js</h3>
+                </div> -->
+                <div class="skill">
+                    <img src="{% static 'assets/svg/bootstrap-svgrepo-com.svg' %}" alt="Bootstrap CSS">
+                    <h3>Bootstrap CSS</h3> 
+                </div>
+              
+                <div class="skill">
+                    <img src="{% static 'assets/svg/mysql-3.svg' %}" alt="MySQL">
+                    <h3>MySQL</h3>
+                </div>
+                <div class="skill">
+                    <img src="{% static 'assets/svg/javascript-1.svg' %}" alt="JavaScript">
+                    <h3>JavaScript</h3>
+                </div>
+                
+                <!-- <div class="skill">
+                    <img src="{% static 'assets/svg/dart-svgrepo-com.svg' %}" alt="Dart">
+                    <h3>Dart</h3>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services container">
+        <div class="back-image">
+            <h1 class="section-heading"> <span>My</span> Services</h1>
+            <p>Discover how my expertise can elevate your idea.</p>
+        </div>
+        <div class="box">
+            <div class="grid">
+                <div class="grid-content">
+                    <div class="title">
+                        <div class="text-style text-outline">01</div>
+                        <img class="logo" src="{% static 'assets/icons/web-programming.png' %}" alt="">
+                    </div>
+
+                    <h2>Web Development</h2>
+                    <p>Transforming your vision into vibrant, responsive websites that adapt as fast as your business! From custom web applications to intuitive user experiences, I specialize in high-quality, scalable solutions crafted to captivate, engage, and drive your brand forward.</p>
+                    <div class="border-line"></div>
+                </div>
+              
+                <div class="grid-content">
+                    <div class="title">
+                        <div class="text-style text-outline">02</div>
+                        <img class="logo" src="{% static 'assets/icons/aws-icon.png' %}" alt="">
+                    </div>
+
+                    <h2>Cloud Support</h2>
+                    <p>I am well versed in the AWS Cloud thus able to offer any assistance when needed in intergrating the AWS Cloud to an organization. Be it Storage, Databases, Networking or even Website Hosting using S3 as well as Principles of Cloud Adoption.</p>
+                    <div class="border-line"></div>
+                </div>
+
+                <!-- <div class="grid-content">
+                    <div class="title">
+                        <div class="text-style text-outline">03</div>
+                        <img class="logo" src="./assets/icons/integration.png" alt="">
+                    </div>
+
+                    <h2>Software Integration</h2>
+                    <p>I specialize in integrating diverse software systems to ensure seamless operation across your
+                        technology stack. By connecting different tools and platforms, I help automate workflows,
+                        enhance data sharing, and boost overall efficiency.</p>
+                    <div class="border-line"></div>
+                </div> -->
+                <div class="grid-content">
+                    <div class="title">
+                        <div class="text-style text-outline">03</div>
+                        <img class="logo" src="{% static 'assets/icons/technical-support.png' %}" alt="">
+                    </div>
+
+                    <h2>Maintenance & Support</h2>
+                    <p>Keep your software at peak performance with my comprehensive maintenance and support services. I handle everything from fast bug fixes and seamless updates to proactive enhancements and troubleshooting, ensuring your applications stay robust, efficient, and ready for anything.
+
+                    </p>
+
+                    <div class="border-line"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="myworks" class="my-works">
+        <div class="work-container container">
+            <h1 class="section-head"> <span>My</span> Works</h1>
+            <p class="section-subheading">Discover some of my most recent projects.</p>
+            <div class="works-grid">
+
+                <div class="work-item">
+                    <img src="{% static 'assets/projects/apartmateme.png' %}" alt="Project 1">
+                    <div class="overlay">
+                        <h2>ApartmateMe</h2>
+                        <p>A go to solution for any one looking to rent or buy a home in Ongata Rongai, Kajiado, Kenya. <br> Seamlessly connecting home owners and tenants. Plans to extend to other parts of the nation.</p>
+                        <a href disabled="https://molbs.github.io/RealEstate-Agency/home" rel="noopener"  class="work-btn" >View Details</a>
+                        <!--target="_blank"  add this before rel to enable link to be opened in a new browser window-->
+                    </div>
+                    
+                </div>
+                <div class="work-item">
+                    <img src="{% static 'assets/projects/automax.png' %}" alt="Project 2">
+                    <div class="overlay">
+                        <h2>AutoMax</h2>
+                        <p>
+                            This is  website for renting and hiring cars , all depends on the client and leaser of the vehicle. Can be made to suit any business idea.
+                        </p>
+                        <a href="https://automax-214bd53c04d2.herokuapp.com" rel="noopener"  class="work-btn" target="_blank">View Details</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form" method="post" enctype="multipart/form-data">
+                
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="service">Select Service</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="cloud">Cloud</option>
+                        <option value="consultation">Consultation</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
+                </div>
+    
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; {{ now|date:'Y'}} Jabez<span>.</span>  All Rights Reserved.</p>
+            <p>Designed and Developed by <a href="#">Jabez Huya</a></p>
+        </div>
+    </footer>  
+    
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+    
+            const response = await fetch("/contact/", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value
+                }
+            });
+    
+            const result = await response.json();
+            if (result.status === "success") {
+                alert("Message sent successfully!");
+                this.reset();
+            } else {
+                alert("Failed to send message.");
+            }
+        });
+
+
+
+         // Get the current hour in the user's local time zone
+         const currentHour = new Date().getHours();
+
+        let greeting = "";
+        if (currentHour < 12) {
+            greeting = "Good Morning!";
+        } else if (currentHour >= 12 && currentHour < 17) {
+            greeting = "Good Afternoon!";
+        } else {
+            greeting = "Good Evening!";
+        }
+
+        // Set the greeting text in the HTML
+        document.getElementById("greeting").textContent = greeting;
+    </script>
+    
+</body>
+
+</html>
