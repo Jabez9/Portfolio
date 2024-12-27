@@ -117,29 +117,45 @@
                     <p class="count-label">Years of Experience</p>
                 </div>
                 <div class="count-item">
-                    <h2 class="count-number" id="commits-count">10+</h2>
-                    <p class="count-label">Project Contributions</p>
-                </div>
-                <!-- <div class="count-item">
+                    <!-- <h2 class="count-number" id="commits-count">10+</h2>
+                    <p class="count-label">Project Contributions</p> -->
                     <h2 class="count-number" id="commits-count">0</h2>
+<p class="count-label">Project Contributions</p>
 
-                <script>
-                    let count = 0;
-                    const counterElement = document.getElementById("commits-count");
-                  
-                    function updateCounter() {
-                      if (count < 10) {
-                        count++;
-                        counterElement.textContent = count;
-                        setTimeout(updateCounter, 30); // Adjust speed by changing the timeout value
-                      } else {
-                        counterElement.textContent = "Technologies Mastered";
-                      }
-                    }
-                  
-                    updateCounter(); // Start the counter
-                  </script>
-                  </div> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const counterElement = document.getElementById("commits-count");
+        const targetNumber = 10; // The number to count up to before showing "+"
+        const duration = 6000; // Total duration of the animation in milliseconds
+        const initialInterval = 100; // Initial interval in milliseconds
+        const slowdownStart = 6; // The number where the slowdown begins
+
+        let currentNumber = 0;
+        let currentInterval = initialInterval; // Start with the initial interval
+
+        function updateCounter() {
+            if (currentNumber < slowdownStart) {
+                currentNumber += Math.ceil(targetNumber / (duration / currentInterval));
+            } else {
+                currentInterval += 100; // Gradually increase the interval to slow down
+                currentNumber += 1; // Increase by 1 as the counter slows
+            }
+
+            if (currentNumber >= targetNumber) {
+                counterElement.textContent = `${targetNumber}+`; // Display the target number with "+"
+            } else {
+                counterElement.textContent = currentNumber; // Update the number
+                setTimeout(updateCounter, currentInterval); // Call the function again with the updated interval
+            }
+        }
+
+        // Start the counter animation
+        updateCounter();
+    });
+</script>
+
+                </div>
+
 
 
                 <div class="count-item">
@@ -289,7 +305,7 @@
                         <h2>ApartmateMe</h2>
                         <p>A go to solution for any one looking to rent or buy a home in Ongata Rongai, Kajiado, Kenya. <br> Seamlessly connecting home owners and tenants. Plans to extend to other parts of the nation.</p>
                         <a href disabled="https://molbs.github.io/RealEstate-Agency/home" rel="noopener"  class="work-btn" >View Details</a>
-                        <!--target="_blank"  add this before rel to enable link to be clickable-->
+                        <!--target="_blank"  add this before rel to enable link to be opened in a new browser window-->
                     </div>
                     
                 </div>
@@ -300,7 +316,7 @@
                         <p>
                             This is  website for renting and hiring cars , all depends on the client and leaser of the vehicle. Can be made to suit any business idea.
                         </p>
-                        <a href disabled="https://molbs.github.io/RealEstate-Agency/home" rel="noopener"  class="work-btn" >View Details</a>
+                        <a href="https://automax-214bd53c04d2.herokuapp.com" rel="noopener"  class="work-btn" target="_blank">View Details</a>
                     </div>
 
                 </div>
@@ -349,7 +365,48 @@
             <p>&copy; {{ now|date:'Y'}} Jabez<span>.</span>  All Rights Reserved.</p>
             <p>Designed and Developed by <a href="#">Jabez Huya</a></p>
         </div>
-    </footer>    
+    </footer>  
+    
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+    
+            const response = await fetch("/contact/", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value
+                }
+            });
+    
+            const result = await response.json();
+            if (result.status === "success") {
+                alert("Message sent successfully!");
+                this.reset();
+            } else {
+                alert("Failed to send message.");
+            }
+        });
+
+
+
+         // Get the current hour in the user's local time zone
+         const currentHour = new Date().getHours();
+
+        let greeting = "";
+        if (currentHour < 12) {
+            greeting = "Good Morning!";
+        } else if (currentHour >= 12 && currentHour < 17) {
+            greeting = "Good Afternoon!";
+        } else {
+            greeting = "Good Evening!";
+        }
+
+        // Set the greeting text in the HTML
+        document.getElementById("greeting").textContent = greeting;
+    </script>
+    
 </body>
 
 </html>
