@@ -188,6 +188,18 @@ header nav .left a.active::after {
   font-size: 1rem;
   color: #979595;
 }
+/* .count-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3498db;
+  transition: color 0.3s ease-in-out;
+}
+
+.count-label {
+  font-size: 1rem;
+  color: #7f8c8d;
+} */
+
 
 /* Utility Classes */
 .display {
