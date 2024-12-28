@@ -31,11 +31,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True if env('DJANGOAPPMODE') == 'Debug' else False
-DEBUG = False
+DEBUG = True if env('DJANGOAPPMODE') == 'Debug' else False
+
 
 ALLOWED_HOSTS = ['127.0.0.1',
-                 'jay-portfolio-2f31b1d06893.herokuapp.com'
+                 'https://jay-portfolio-2f31b1d06893.herokuapp.com/',
                  ]
 
 
