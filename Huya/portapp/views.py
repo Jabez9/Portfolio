@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt  # Needed for AJAX requests
 def home(request):
     # Get the current time based on the server's time zone
     current_time = datetime.now()
@@ -31,30 +32,49 @@ def home(request):
     else:
         greeting = "Good Evening!"
 
-    # Pass the greeting to the template
-    context = {
-        'greeting': greeting
-    }
-
-    # Handle form submission
-    if request.method == "POST":
+    # Handle AJAX form submission
+    if request.method == "POST" and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         name = request.POST.get("name")
         email = request.POST.get("email")
+        phone = request.POST.get("phone")
         service = request.POST.get("service")
         message = request.POST.get("message")
 
-        # Example: Send an email (configure your email settings in settings.py)
         try:
-            send_mail(
-                subject=f"New contact form submission: {service}",
-                message=f"Name: {name}\nEmail: {email}\nMessage: {message}",
-                from_email=email,
-                recipient_list=["mukoshijabez@yahoo.com",
-                                'mukoshijabez@gmail.com'],
-            )
-            context['success'] = "Your message has been sent successfully!"
+                # Get the form data
+                name = request.POST.get("name")
+                email = request.POST.get("email")
+                phone = request.POST.get("phone")
+                service = request.POST.get("service")
+                message = request.POST.get("message")
+                
+                # Prepare the email content
+                email_subject = f"New Contact Me Form submission: {service}"
+                email_message = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nService: {service}\nMessage: {message}"
+                
+                # Send email using Mailgun sandbox domain
+                send_mail(
+                    email_subject,
+                    email_message,
+                    'dearjabez@jabezhuya.tech' , #my custom sender
+                    ['mukoshijabez@gmail.com',
+                    'mukoshijabez@yahoo.com'],  # Authorized recipient email
+                    fail_silently=False,
+                )
+                
+                # Return success response
+                return JsonResponse({"status": "success", "message": "Your message has been sent successfully!"})
+            
         except Exception as e:
-            context['error'] = f"Failed to send your message: {str(e)}"
+                # Handle any errors
+                return JsonResponse({
+                    "status": "error",
+                    "message": f"Failed to send your message: {str(e)}"
+                })
 
+
+    # Render the webpage with the greeting
+    context = {
+        'greeting': greeting,
+    }
     return render(request, 'index.html', context)
-
