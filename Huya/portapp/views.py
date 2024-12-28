@@ -49,7 +49,8 @@ def home(request):
                 subject=f"New contact form submission: {service}",
                 message=f"Name: {name}\nEmail: {email}\nMessage: {message}",
                 from_email=email,
-                recipient_list=["mukoshijabez@yahoo.com"],
+                recipient_list=["mukoshijabez@yahoo.com",
+                                'mukoshijabez@gmail.com'],
             )
             context['success'] = "Your message has been sent successfully!"
         except Exception as e:
