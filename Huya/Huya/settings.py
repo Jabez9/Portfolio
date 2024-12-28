@@ -38,6 +38,9 @@ ALLOWED_HOSTS = ['127.0.0.1',
                  'https://jay-portfolio-2f31b1d06893.herokuapp.com',
                  ]
 
+# Add this to allow the trusted origin for CSRF requests
+CSRF_TRUSTED_ORIGINS = ['https://jay-portfolio-2f31b1d06893.herokuapp.com']
+
 
 # Application definition
 
