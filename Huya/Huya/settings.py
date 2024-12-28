@@ -34,7 +34,9 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True if env('DJANGOAPPMODE') == 'Debug' else False
 print(f'Application is running in debug mode: {DEBUG}')
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'jay-portfolio-2f31b1d06893.herokuapp.com'
+                 ]
 
 
 # Application definition

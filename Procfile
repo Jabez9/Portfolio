@@ -1,1 +1,1 @@
-web: cd ./Huya && gunicorn Huya.wsgi
+web cd ./Huya && gunicorn Huya.wsgi
