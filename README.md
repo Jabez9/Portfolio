@@ -19,5 +19,5 @@ Welcome to Jabez Huya's personal portfolio! This website showcases my work, skil
 - **Google Fonts**: For custom typography.
 
 ## Website Link:
-The portfolio is deployed on Heroku at **https://jay-portfolio-2f31b1d06893.herokuapp.com**.
+The portfolio is deployed on Heroku at **https://jay-portfolio-2f31b1d06893.herokuapp.com**, and at https://jabezhuya.tech.
 
