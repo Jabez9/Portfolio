@@ -56,7 +56,7 @@ def home(request):
                 send_mail(
                     email_subject,
                     email_message,
-                    'info@jabezhuya.tech' , #my custom sender
+                    'dearjabez@jabezhuya.tech' , #my custom sender
                     ['mukoshijabez@gmail.com',
                     'mukoshijabez@yahoo.com'],  # Authorized recipient email
                     fail_silently=False,
