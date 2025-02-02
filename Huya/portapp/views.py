@@ -52,7 +52,7 @@ def home(request):
                 email_subject = f"New Contact Me Form submission: {service}"
                 email_message = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nService: {service}\nMessage: {message}"
                 
-                # Send email using Mailgun sandbox domain
+                # Send email using Mailgun domain
                 send_mail(
                     email_subject,
                     email_message,
